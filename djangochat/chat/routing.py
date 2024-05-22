@@ -8,7 +8,7 @@ ws_urlpatterns = [
 ]
 
 channel_routing = {
-    'websocket.connect': 'chat_server.consumers.WSConsumer.as_asgi()',
-    'websocket.receive': 'chat_server.consumers.WSConsumer.as_asgi()',
-    'websocket.disconnect': 'chat_server.consumers.WSConsumer.as_asgi()',
+    'websocket.connect': 'chat.consumers.WSConsumer.as_asgi()',
+    'websocket.receive': 'chat.consumers.WSConsumer.as_asgi()',
+    'websocket.disconnect': 'chat.consumers.WSConsumer.as_asgi()',
 }

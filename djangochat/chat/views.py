@@ -4,14 +4,12 @@ from .serializers import RoomSerializer, UserProfileSerializer
 from rest_framework.viewsets import ModelViewSet
 
 
-
-
 def api_users(request):
-    if request.user.is_authenticated:
-        if not UserProfile.objects.filter(user=request.user).exists():
-            add_user = UserProfile()
-            add_user.user = request.user
-            add_user.save()
+    # if request.user.is_authenticated:
+    #     if not UserProfile.objects.filter(user=request.user).exists():
+    #         add_user = UserProfile()
+    #         add_user.user = request.user
+    #         add_user.save()
     if request.method == 'GET':
         users = UserProfile.objects.all()
         serializer = UserProfileSerializer(users, many=True)
